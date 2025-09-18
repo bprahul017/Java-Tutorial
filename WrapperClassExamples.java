@@ -18,6 +18,8 @@ public class WrapperClassExamples {
         // Accessing
         int num = numbers.get(0); // unboxing: Integer -> int
 
+        System.out.println(obj2.byteValue());
+
         System.out.println("Autoboxed value: " + obj);
         System.out.println("Unboxed value: " + b);
         System.out.println("From ArrayList: " + num);
