@@ -1,10 +1,28 @@
+import javax.swing.*;
+
 public class DynamicPolymorphism {
     public static void main(String[] args) {
-        Fish catfish = new Catfish("River");
-        Fish salmon = new Salmon("Sea");
+        Fish fish;
 
-        System.out.println(catfish.live());
-        System.out.println(salmon.live());
+        String selectedFish = JOptionPane.showInputDialog("Enter a fish");
+
+        switch (selectedFish) {
+            case "catFish":
+                fish = new Catfish("River");
+                JOptionPane.showMessageDialog(null, selectedFish + fish.live());
+                break;
+
+            case "salmon":
+                fish = new Salmon("Sea");
+                JOptionPane.showMessageDialog(null, selectedFish + fish.live());
+                break;
+
+            default:
+                JOptionPane.showMessageDialog(null, "Option not found");
+                break;
+
+        }
+
     }
 }
 
@@ -32,7 +50,7 @@ class Salmon extends Fish {
 class Catfish extends Fish {
     String livesIn;
 
-    Catfish(String livesIn){
+    Catfish(String livesIn) {
         this.livesIn = livesIn;
     }
 
